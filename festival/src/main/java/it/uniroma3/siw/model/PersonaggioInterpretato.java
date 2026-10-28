@@ -7,6 +7,5 @@ import jakarta.persistence.Table;
 @Table
 public class PersonaggioInterpretato {
 
-	ciao ciao
+
 }
-cccc
