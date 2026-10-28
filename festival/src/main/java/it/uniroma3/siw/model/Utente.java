@@ -1,0 +1,19 @@
+package it.uniroma3.siw.model;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+
+@Entity
+public class Utente extends EntitaBase {
+
+	@NotBlank(message = "inserisci un username")
+	@Column(nullable = false, unique = true)
+	private String username;
+	
+	@NotBlank(message = "la password è obbligatoria")
+	@Column(nullable = false)
+	private String password;
+	
+	@Enumerated(EnumType.STRING)
+	private RuoloUtente ruolo;
+}

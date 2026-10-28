@@ -1,0 +1,22 @@
+package it.uniroma3.siw.validation;
+
+import java.time.LocalDate;
+
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
+/*
+ * Implementa la logica della validazione
+ */
+public class NotFutureYearValidator implements ConstraintValidator<NotFutureYear, Integer>{
+
+	private static final int MIN_YEAR = 1895;
+	
+	@Override
+	public boolean isValid(Integer value, ConstraintValidatorContext context) {
+		if(value == null) {
+			return false;
+		}
+		int currentYear = LocalDate.now().getYear();
+		return (value >= MIN_YEAR && value <= currentYear);
+	}
+}

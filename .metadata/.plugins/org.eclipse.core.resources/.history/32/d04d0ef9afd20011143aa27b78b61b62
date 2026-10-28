@@ -1,0 +1,13 @@
+package it.uniroma3.siw.model;
+
+import jakarta.persistence.*;
+
+@MappedSuperclass
+public abstract class EntitaBase {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	
+}

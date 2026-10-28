@@ -1,0 +1,7 @@
+package it.uniroma3.siw.validation;
+
+import jakarta.validation.ConstraintValidator;
+
+public class NotFutureYearValidator implements ConstraintValidator<NotFutureYear, Integer>{
+
+}

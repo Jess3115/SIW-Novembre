@@ -1,0 +1,25 @@
+package it.uniroma3.siw.model;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Recensione extends EntitaBase {
+
+	private String testo;
+	
+	@Column(nullable = false)
+	private Integer voto;
+	
+	@Column(nullable = false)
+	private LocalDateTime data;
+	
+	//una recensione riguarda un film 
+	@OneToMany
+	private Film filmRecensito;
+	
+	//una recensione è scritta da un utente registrato
+	
+	
+}

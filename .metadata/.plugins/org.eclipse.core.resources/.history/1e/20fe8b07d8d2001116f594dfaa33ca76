@@ -1,0 +1,44 @@
+package it.uniroma3.siw.model;
+
+import java.util.List;
+
+import it.uniroma3.siw.validation.NotFutureYear;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+@Entity
+public class Film extends EntitaBase {
+
+	@NotBlank(message = "il titolo è obbligatorio")
+	@Column(nullable = false)
+	private String titolo;
+	
+	@NotNull
+	@Min(value = 1900)
+	@NotFutureYear
+	private Integer anno;
+	
+	@NotNull
+	@Column(nullable = false)
+	private Integer durata;
+	
+	private String genere;
+	
+	private String paeseProduzione;
+	
+	//un film può partecipare a uno o più festival
+	@ManyToMany
+	private List<Festival> festivalPartecipante;
+	
+	//ogni film ha più attori, ciascuno dei quali interpreta un personaggio
+	
+	//un film può avere più proiezioni
+	@OneToMany
+	private List<Proiezione> proiezioniPartecipante;
+	
+	//un film può avere più recensioni
+	@OneToMany
+	private List<Recensione> recensioniRicevute;
+}

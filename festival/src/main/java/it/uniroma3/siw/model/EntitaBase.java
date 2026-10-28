@@ -1,0 +1,26 @@
+package it.uniroma3.siw.model;
+
+import java.util.Objects;
+
+import jakarta.persistence.*;
+
+//e' una classe astratta che viene estesa da tutte le altre entità per evitare di scrivere l'attributo id a tutte
+//non sarà creata all'interno del db 
+//serve solo per generare l'id una volta che l'oggetto viene salvato, in questo modo ogni 
+
+@MappedSuperclass
+public abstract class EntitaBase {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+}

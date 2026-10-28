@@ -1,0 +1,14 @@
+package it.uniroma3.siw.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(uniqueConstraints = @UniqueConstraint({"nome", "indirizzo"}))
+public class Sala extends EntitaBase {
+
+	private String nome;
+	
+	private String indirizzo;
+	
+	private Integer capienza;
+}

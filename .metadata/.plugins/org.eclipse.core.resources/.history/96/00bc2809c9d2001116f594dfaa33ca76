@@ -1,0 +1,15 @@
+package it.uniroma3.siw.model;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Recensione extends EntitaBase {
+
+	private String testo;
+	
+	private Integer voto;
+	
+	private LocalDateTime data;
+}

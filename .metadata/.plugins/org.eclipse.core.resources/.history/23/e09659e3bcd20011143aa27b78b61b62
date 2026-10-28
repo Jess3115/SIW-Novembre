@@ -1,0 +1,25 @@
+package it.uniroma3.siw.model;
+
+import it.uniroma3.siw.validation.NotFutureYear;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+@Entity
+public class Film extends EntitaBase {
+
+	@NotBlank
+	private String titolo;
+	
+	@NotNull
+	@Min(value = 1900)
+	@NotFutureYear
+	private Integer anno;
+	
+	private Integer durata;
+	
+	private String genere;
+	
+	private String paeseProduzione;
+}

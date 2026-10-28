@@ -1,0 +1,13 @@
+package it.uniroma3.siw.model;
+
+public enum TipoStato {
+	SCHEDULED("Programmata"),
+	COMPLETED("Completata"),
+	CANCELLED("Cancellata");
+	
+	private final String etichetta;
+	
+	TipoStato(String etichetta){
+		this.etichetta = etichetta;
+	}
+}

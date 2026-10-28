@@ -1,0 +1,18 @@
+package it.uniroma3.siw.model;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+
+@Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"nome", "indirizzo"}))
+public class Sala extends EntitaBase {
+
+	@NotBlank
+	@Column(nullable = false)
+	private String nome;
+	
+	@Column(nullable = false)
+	private String indirizzo;
+	
+	private Integer capienza;
+}

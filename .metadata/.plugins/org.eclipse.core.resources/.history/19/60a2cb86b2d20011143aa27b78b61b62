@@ -1,0 +1,24 @@
+package it.uniroma3.siw.model;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+
+@Entity
+public class Festival extends EntitaBase {
+
+	@NotBlank(message = "il nome è obbligatorio")
+	@Column(nullable = false)
+	private String name;
+	
+	private Integer year;
+	
+	private String city;
+	
+	private LocalDate startDate;
+	
+	private LocalDate endDate;
+	
+	private String describe;
+}

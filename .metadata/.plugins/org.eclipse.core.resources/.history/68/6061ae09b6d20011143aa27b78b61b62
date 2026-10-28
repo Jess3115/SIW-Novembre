@@ -1,0 +1,20 @@
+package it.uniroma3.siw.model;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Attore extends EntitaBase {
+
+	@Column(nullable = false)
+	private String nome;
+	
+	@Column(nullable = false)
+	private String cognome;
+	
+	
+	private LocalDate dataNascita;
+	
+	private String nazionalita;
+}

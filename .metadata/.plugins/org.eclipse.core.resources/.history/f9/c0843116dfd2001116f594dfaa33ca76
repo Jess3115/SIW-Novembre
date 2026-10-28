@@ -1,0 +1,20 @@
+package it.uniroma3.siw.model;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Proiezione extends EntitaBase {
+
+	@Column(nullable = false)
+	private LocalDate data;
+	
+	@Column(nullable = false)
+	private LocalTime ora;
+	
+	@Enumerated(EnumType.STRING) //salva il nome ("SCHEDULED") e non la posizione numerica. Così aggiungere o riordinare valori non corrompe i dati 
+	@Column(nullable = false)
+	private StatoProiezione stato = StatoProiezione.SCHEDULED;
+}
